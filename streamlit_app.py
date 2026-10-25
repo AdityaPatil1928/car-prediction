@@ -4,15 +4,15 @@ import requests
 st.set_page_config(page_title="Car Price Prediction", page_icon="🚗", layout="centered")
 
 API_URL = (
-    "http://127.0.0.1:8000/predict"
-)  # change if your endpoint differs
+    "https://car-prediction-dp8j.onrender.com/predict" 
+    or "http://127.0.0.1:8000/predict"
+)
 
 st.title("🚗 Car Price Prediction")
 st.caption(
     "This UI sends data to your FastAPI backend and shows predicted selling price."
 )
 
-# --- Inputs (match your dataset columns exactly) ---
 car_name = st.text_input("Car_Name (e.g. swift, ritz, sx4)", value="swift")
 
 year = st.number_input("Year", min_value=1990, max_value=2026, value=2014, step=1)
